@@ -22,7 +22,8 @@ void setup() {
 
 void loop() {
   Serial.println(vcc);
-  if(vcc < 4900) {
+  if(vcc < 4900) { //this is an evil hack ;)
+                   //wehn you reset the arduwino the voltage is lower becouse the leds are glowing and taking current
     digitalWrite(MOTORPIN, HIGH);
     starttime = millis();
     while(millis() - starttime < 512) {
